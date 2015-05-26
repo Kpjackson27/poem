@@ -1,0 +1,35 @@
+<section id="chat">
+  <div class="col-md-4">
+    <h1>Live chat</h1>
+  </div>
+</section>
+<section data-ng-controller="PoemController" data-ng-init="find()">
+  <div class="col-md-8">
+  <div class="inner-pad">
+    <li data-ng-repeat="poem in poems">
+      <ul class="list-inline">
+ 
+  <li><a href="#"><img src="http://placehold.it/75x75" alt="avatar" class="avatar img-responsive img-circle"/></a></li>
+
+    <li><a href="#"><h5>By: <span>{{poem.user.name}}</span></h5></a></li>
+  </ul>
+<h5><span>{{poem.created | date:'medium'}}</span></h5>
+<h4><a data-ng-href="/poems/{{poem._id}}">{{poem.title}}</a>
+  <span data-ng-if="hasAuthorization(poem)">
+          <a class="btn" href="/poems/{{poem._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+  </span>
+</h4>
+<p>{{poem.content}}</p>
+<ul class="list-inline">
+  <li><a href="">Like</a></li>
+  <li><a href="">Dislike</a></li>
+  <li><a href="">Upvote</a></li>
+  <li><a href="">Share</a></li>
+
+</ul> 
+</li>
+</div>
+</div>
+</section>

@@ -1,0 +1,11 @@
+<section data-ng-controller="PoemController" data-ng-init="findOne()">
+  <span>{{poem.created | date:'medium'}}</span> /
+  <span>{{poem.user.name}}</span>
+  <h2>{{poem.title}}</h2>
+  <div data-ng-if="hasAuthorization(poem)">
+    <a class="btn" href="/poems/{{poem._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+  </div>
+  <div>{{poem.content}}</div>
+</section>
